@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="my-home">
+  <!---标题--->
+  <title>算命工程师 </title>
+  <!--输入信息区-->
+  <view class="section input">
+    <view class="xingming" style="flex-direction:row;">
+      <text>姓名:</text>
+      <input>class="input"</input>
+    </view>
+    <view class ="xingbie">
+      <text>性别:</text>
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox" wx:for="{{item}}">
+          <checkbox>
+            value="{{item.name}} checked="{{item.checked}}"
+          </checkbox>
+          {{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+  <button>shuru</button>
+  <text>@明丽实验室</text>
+</view>
