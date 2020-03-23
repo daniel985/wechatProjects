@@ -1,4 +1,33 @@
 /**index.wxss**/
+
+.nameInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.genderRadio {
+  display: flex;
+  flex-direction: row;
+}
+.birthReginPicker {
+  display: flex;
+  flex-direction: row;
+}
+.birthDatePicker {
+  display: flex;
+  flex-direction: row;
+}
+.birthTimePicker {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.logo {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;

@@ -1,25 +1,50 @@
 <!--index.wxml-->
 <view class="my-home">
   <!---标题--->
-  <title>算命工程师 </title>
   <!--输入信息区-->
-  <view class="section input">
-    <view class="xingming" style="flex-direction:row;">
-      <text>姓名:</text>
-      <input>class="input"</input>
-    </view>
-    <view class ="xingbie">
-      <text>性别:</text>
-      <checkbox-group bindchange="checkboxChange">
-        <label class="checkbox" wx:for="{{item}}">
-          <checkbox>
-            value="{{item.name}} checked="{{item.checked}}"
-          </checkbox>
-          {{item.value}}
-        </label>
-      </checkbox-group>
-    </view>
+  <view class="nameInput">
+    <text class="name">姓名: </text>
+    <input class="name-input" placeholder="请输入姓名" bindinput="bindNameInput"/>
   </view>
-  <button>shuru</button>
-  <text>@明丽实验室</text>
+
+  <view class="genderRadio">
+    <text classs="gender">性别: </text>
+    <radio-group class="gender-choose" bindchange="radioChange">
+      <radio class="radio" wx:for-items="{{genderItems}}" wx:key="value" value="{{item.value}}" checked="{{item.checked}}">
+        <text>{{item.value}}</text>
+      </radio>
+    </radio-group>
+  </view>
+
+   <view class="birthReginPicker">
+    <text class="birth-regin">出生地: </text>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+       <input placeholder="选择出生地" disabled='true' value='{{region[0]}}{{region[1]}}{{region[2]}}'/>
+      </view>
+    </picker>
+  </view>
+
+  <view class="birthDatePicker">
+    <text class="birth-date">出生日期: </text>
+    <picker mode="date" value="{{date}}" start="1900-01-01" end="2100-12-31" bindchange="bindDateChange">
+      <view class="picker">
+        <input placeholder="选择日期" disabled='true' value='{{date}}'/>
+      </view>
+    </picker>
+  </view>
+
+  <view class="birthTimePicker">
+    <text class="birth-time">出生时间: </text>
+    <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+      <view class="picker">
+       <input placeholder="选择时间" disabled='true' value='{{time}}'/>
+      </view>
+    </picker>
+  </view>
+
+  <button bindtap="bindTest">测一测</button>
+  <view class="logo">
+    <text>@明丽实验室</text>
+  </view>
 </view>
